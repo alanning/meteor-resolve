@@ -97,3 +97,13 @@ Tinytest.add('resolve set part4.name = Mary', function (test) {
   actual = Util.resolve(obj, 'part4.name')
   test.equal(actual, expected);
 });
+Tinytest.add('resolve set part4.arr = [1, 2]', function (test) {
+  var expected = [1, 2],
+      actual
+
+  actual = Util.resolve(obj, 'part4.arr', [1, 2])
+  test.equal(actual, expected);
+
+  actual = Util.resolve(obj, 'part4.arr')
+  test.equal(actual, expected);
+});
